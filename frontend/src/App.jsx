@@ -66,29 +66,24 @@ const App = () => {
           <div className="img img-2" />
         </div>
         <div className="about-container__content">
-          <div className="title-small">ABOUT US</div>
+          <div className="title-small">A propos de nous</div>
           <div className="title">
-            A Great Place <br />
-            For <b>Medical Care</b>
+            la place ideal  <br />
+           pour <b>vous</b>
           </div>
           <div className="sub">
-            But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, the actual teachings of the great explorer of
-            the truth.
+            on est une association qui permet aux parents d'enfants differents de se retrouver.....
           </div>
-          <button className="button">LEARN MORE</button>
+          <button className="button">lire plus</button>
         </div>
       </div>
 
-      <div className="services-container">
+      <div className="services-container ">
         <div className="texts">
           <div className="title-small">SERVICES</div>
-          <div className="title">Services We Offer</div>
+          <div className="title">Services que nous offrons</div>
           <div className="sub">
-            But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the.
+          bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
           </div>
         </div>
 
@@ -146,7 +141,7 @@ const App = () => {
 
       <FeedBack />
 
-      <div className="location">
+      <div className="location ">
         <div className="find-box">
           <div className="content">
             <h2 className="title">
@@ -168,20 +163,20 @@ const App = () => {
 
       <div className="blog-container">
         <div className="title-small">BLOG</div>
-        <div className="title">Latest Articles</div>
-        <div className="sub">Stay on top of the news on all health matters</div>
+        <div className="title">Derniers Articles</div>
+        <div className="sub">Retrouvez tous nous articles sur....</div>
         <div className="article-boxes">
           <div className="box box-1">
             <div className="top"></div>
             <div className="bottom">
               <div className="meta">
-                <div className="date">17th April, 2020</div>
-                <div className="time">5-min read</div>
+                <div className="date">25-05-2026</div>
+                <div className="time ">5-min lecture </div>
               </div>
-              <h4>But I Must Explain To You How</h4>
+              <h4>On vous explique comemnt on percoit etc etc</h4>
               <p>
-                But I Must Explain To You How All This Mistaken Idea Denouncing
-                Plea....
+               blalalalalalalalallalalallalalallammmmmmmmmmmmmm
+               ffdffdfdfdf....
               </p>
             </div>
           </div>
@@ -190,13 +185,13 @@ const App = () => {
             <div className="top"></div>
             <div className="bottom">
               <div className="meta">
-                <div className="date">17th April, 2020</div>
-                <div className="time">5-min read</div>
+                <div className="date">02-04-2026</div>
+                <div className="time">5-min lecture</div>
               </div>
-              <h4>But I Must Explain To You How</h4>
+              <h4>On vous explique comemnt on percoit etc etc</h4>
               <p>
-                But I Must Explain To You How All This Mistaken Idea Denouncing
-                Plea....
+                  blalalalalalalalallalalallalalallammmmmmmmmmmmmmdddddd
+                ffdffdfdfdf....
               </p>
             </div>
           </div>
@@ -205,18 +200,18 @@ const App = () => {
             <div className="top"></div>
             <div className="bottom">
               <div className="meta">
-                <div className="date">17th April, 2020</div>
-                <div className="time">5-min read</div>
+                <div className="date">8-09-2026</div>
+                <div className="time">5-min lecture</div>
               </div>
               <h4>But I Must Explain To You How</h4>
               <p>
-                But I Must Explain To You How All This Mistaken Idea Denouncing
-                Plea....
+                 blalalalalalalalallalalallalalallammmmmmmmmmmmmm
+               ffdffdfdfdf....fffffff
               </p>
             </div>
           </div>
         </div>
-        <button className="button">Keep Reading</button>
+        <button className="button">Lire plus</button>
       </div>
 
       <div className="newsletter">
@@ -238,17 +233,16 @@ const App = () => {
       <footer className="footer-container">
         <div className="content con-1">
           <div className="title">Sitemap</div>
-          <div className="sub">Home</div>
           <div className="sub">Services</div>
-          <div className="sub">About Us</div>
-          <div className="sub">Blog</div>
-          <div className="sub">Careers</div>
+          <div className="sub">A propos de nous</div>
+          <div className="sub">Article</div>
+       
         </div>
         <div className="content con-2">
-          <div className="title">Contact Us</div>
+          <div className="title">Contactez nous</div>
           <div className="sub">Phone</div>
           <div className="sub">(+234) 812 873 9485</div>
-          <div className="sub">Social</div>
+          <div className="sub">reseaux sociaux</div>
           <div className="icons">
             <i class="fab fa-linkedin-in"></i>
             <i class="fab fa-twitter"></i>
@@ -256,9 +250,9 @@ const App = () => {
           </div>
         </div>
         <div className="content con-3">
-          <div className="title">Address</div>
+          <div className="title">Adresse</div>
           <div className="sub">
-            No 6 Chief Mathiew Close Off Tombia Street, Port Harcourt, Nigeria.
+            colfontaine .............
           </div>
         </div>
       </footer>

@@ -182,14 +182,14 @@
     }
 
     .img-1 {
-      background: url("./assets/images/about-1.jpg") center;
+      background: url("./assets/images/image2.jpg") center;
       margin-right: 40px;
       background-size: cover;
 
     }
 
     .img-2 {
-      background: url("./assets/images/about-2.jpg") 50% 0;
+      background: url("./assets/images/image3.jpg") 50% 0;
       background-size: cover;
     }
   }
@@ -227,6 +227,7 @@
 }
 
 .services-container {
+  display:none;
   padding: 100px 5%;
   padding-top: 40px;
 
@@ -320,6 +321,7 @@
 }
 
 .location {
+  display:none;
   background: url("./assets/images/map.jpg") rgba(0, 0, 0, .2);
   background-blend-mode: multiply;
   background-size: contain;
@@ -475,6 +477,7 @@
 }
 
 .newsletter {
+  display:none ;
   padding: 100px 8%;
   background: rgba($color: #242C90, $alpha: 0.08);
   text-align: center;
