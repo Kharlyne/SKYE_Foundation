@@ -43,10 +43,11 @@ const App = () => {
                   ..............
                 </div>
               </div>
-              <h1 className="title">Association aide parent avec enfant différent.</h1>
+              <h1 className="title">SKYE Foundation</h1>
               <div className="sub">
-               Nous accompagnons les parents d'enfants différents avec des ressources, 
-               des articles et des vidéos pour mieux comprendre et soutenir vos enfants.
+
+              Sky Foundation est une initiative de parents qui souhaitent se rassembler, partager et agir ensemble pour favoriser 
+              l’inclusion des enfants autistes dans la société.
               </div>
               <button className="button get">commencer</button>
             </div>
@@ -68,11 +69,11 @@ const App = () => {
         <div className="about-container__content">
           <div className="title-small">A propos de nous</div>
           <div className="title">
-            la place ideal  <br />
-           pour <b>vous</b>
+            Créer du lien autour de l’<b>autisme</b>
           </div>
           <div className="sub">
-            on est une association qui permet aux parents d'enfants differents de se retrouver.....
+           Sky Foundation est une initiative née de l’expérience d’une maman d’enfant autiste.
+Face aux défis du quotidien, mais aussi au sentiment d’isolement que peuvent vivre de nombreux parents, l’idée est née de créer un espace de rencontre, de partage et de solidarité.
           </div>
           <button className="button">lire plus</button>
         </div>
@@ -162,26 +163,27 @@ const App = () => {
       </div>
 
       <div className="blog-container">
-        <div className="title-small">BLOG</div>
+        {/*
+         <div className="title-small">BLOG</div>
+         */}
         <div className="title">Derniers Articles</div>
-        <div className="sub">Retrouvez tous nous articles sur....</div>
+        <div className="sub">Retrouvez tous nous articles ici</div>
         <div className="article-boxes">
           <div className="box box-1">
             <div className="top"></div>
             <div className="bottom">
               <div className="meta">
-                <div className="date">25-05-2026</div>
+                <div className="date">13-03-2026</div>
                 <div className="time ">5-min lecture </div>
               </div>
-              <h4>On vous explique comemnt on percoit etc etc</h4>
+              <h4>Allié de l'autisme initiative</h4>
               <p>
-               blalalalalalalalallalalallalalallammmmmmmmmmmmmm
-               ffdffdfdfdf....
+               Rejoignez-nous ce 2Avril pour une heure de partage  dans le cadre d’une initiative locale  à l’occasion de la Journée mondiale de sensibilisation à l’autisme.
               </p>
             </div>
           </div>
 
-          <div className="box box-2">
+         {/* <div className="box box-2">
             <div className="top"></div>
             <div className="bottom">
               <div className="meta">
@@ -209,7 +211,7 @@ const App = () => {
                ffdffdfdfdf....fffffff
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         <button className="button">Lire plus</button>
       </div>
