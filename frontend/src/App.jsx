@@ -79,88 +79,11 @@ Face aux défis du quotidien, mais aussi au sentiment d’isolement que peuvent 
         </div>
       </div>
 
-      <div className="services-container ">
-        <div className="texts">
-          <div className="title-small">SERVICES</div>
-          <div className="title">Services que nous offrons</div>
-          <div className="sub">
-          bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-          </div>
-        </div>
-
-        <div className="boxes">
-          <div className="box">
-            <div className="content">
-              <img src={Tablets} alt="tablets" className="icon tablet" />
-              <div className="title-small">OLDER & CHILDREN</div>
-              <div className="title">
-                Medication <br /> Tracker
-              </div>
-              <div className="sub">
-                But I must explain to you how all this mistaken idea of
-                denouncing pleasure and praising pain was born.
-              </div>
-              <div className="more">
-                Learn More <img src={Arrow} alt="arrow" />
-              </div>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="content">
-              <img src={Syringe} alt="tablets" className="icon syr" />
-              <div className="title-small">CHILDREN</div>
-              <div className="title">
-                Vaccination <br /> Tracker
-              </div>
-              <div className="sub">
-                But I must explain to you how all this mistaken idea of
-                denouncing pleasure and praising pain was born.
-              </div>
-              <div className="more">
-                Learn More <img src={Arrow} alt="arrow" />
-              </div>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="content">
-              <img src={Bubbles} alt="tablets" className="icon syr" />
-              <div className="title-small">OLDER & CHILDREN</div>
-              <div className="title doc">DocChat</div>
-              <div className="sub">
-                But I must explain to you how all this mistaken idea of
-                denouncing pleasure and praising pain was born.
-              </div>
-              <div className="more">
-                Learn More <img src={Arrow} alt="arrow" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
       <FeedBack />
 
-      <div className="location ">
-        <div className="find-box">
-          <div className="content">
-            <h2 className="title">
-              Let's Find A Hospital <br /> Near You.
-            </h2>
-            <p className="sub">
-              But I must explain to you how all this mistaken idea of denouncing
-              pleasure and praising pain was born and I will give you a complete
-              account of the system, and expound the actual teachings of the
-              great explorer of.
-            </p>
-            <div className="input-con">
-              <input placeholder="Enter Your Location" type="text" />
-              <button className="button">Search</button>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <div className="blog-container">
         {/*
@@ -216,21 +139,6 @@ Face aux défis du quotidien, mais aussi au sentiment d’isolement que peuvent 
         <button className="button">Lire plus</button>
       </div>
 
-      <div className="newsletter">
-        <div className="title">
-          Subscribe To Our <b>NewsLetter</b>
-        </div>
-        <p className="sub">
-          Receive our weekly digest of featured health articles
-        </p>
-        <div className="input-con">
-          <div className="container">
-            <img src={Mail} alt="mail" />
-            <input type="text" placeholder="example@mail.com" />
-          </div>
-          <button className="button">Subscribe</button>
-        </div>
-      </div>
 
       <footer className="footer-container">
         <div className="content con-1">
