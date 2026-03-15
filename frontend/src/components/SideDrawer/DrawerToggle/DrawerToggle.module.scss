@@ -1,27 +1,26 @@
-@use '../../../styles/vars' as v; // Vérifie bien que ce chemin est le bon pour ton fichier vars
+@use '../../../styles/vars' as v; 
 
 .DrawerToggle {
   position: fixed;
   top: 25px;
-  right: 25px; // Positionné à droite comme une vraie app
+  right: 25px; 
   z-index: 5000;
   cursor: pointer;
   
-  // Design moderne et épuré
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem; // Taille idéale pour le pouce
+  font-size: 2rem; 
   color: v.$blue-dark; // Utilisation de ta couleur charte
   background: rgba(255, 255, 255, 0.95); // Fond blanc translucide
   padding: 10px;
-  border-radius: 50%; // Forme circulaire très "iOS/Android"
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); // Une ombre douce pour le relief
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
   
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
-    transform: scale(1.1); // Petit effet de zoom au survol
+    transform: scale(1.1); 
   }
 
   // Animation simple au clic
