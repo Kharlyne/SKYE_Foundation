@@ -6,7 +6,7 @@ import About from "../components/About";
 import ArticlesSection from "../components/ArticlesSection";
 //import Services from "../components/Services"; 
 import FeedBack from "../components/Feedback";
-import Footer from "../components/Footer";
+
 import SideDrawer from "../components/SideDrawer/SideDrawer";
 import DrawerToggle from "../components/SideDrawer/DrawerToggle/DrawerToggle"; 
 
@@ -37,7 +37,7 @@ const Home = () => {
       <ArticlesSection />
       {/* 5. Feedback & Footer */}
       <FeedBack />
-      <Footer />
+      
     </div>
   );
 };
