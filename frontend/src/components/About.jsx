@@ -31,7 +31,7 @@ const About = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.span variants={itemVariants} className="subtitle">
-            Créer du lien autour de l’autisme
+           Qui sommes nous?
           </motion.span>
           
           <motion.h2 variants={itemVariants}>
@@ -44,16 +44,7 @@ const About = () => {
             de créer un espace de rencontre, de partage et de solidarité.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="stats">
-            <div className="stat-item">
-              <span>{isInView && <CountUp end={120} duration={7} suffix="+" />}</span>
-              Familles aidées
-            </div>
-            <div className="stat-item">
-              <span>{isInView && <CountUp end={10} duration={15} suffix="+" />}</span>
-              Experts dédiés
-            </div>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>

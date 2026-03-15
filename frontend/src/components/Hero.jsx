@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Hero.scss";
-import HeroImage from "../assets/images/image4.jpg";
+import HeroImage from "../assets/images/pel.jpg";
 
 const Hero = () => {
   const [isMob, setIsMob] = useState(false);
@@ -22,17 +22,19 @@ const Hero = () => {
 // Contenu avec logique de rendu conditionnel pour le paragraphe
 const Content = ({ isMobile }) => (
   <div className="hero-content-inner">
-    <span className="badge">Soutien & Bienveillance</span>
-    <h1>Accompagner les parents, <br /><span>un pas après l'autre.</span></h1>
+    <span className="badge">SKYE FOUNDATION</span>
+    <h1>Créer du lien  <br /><span>autour de l'autisme.</span></h1>
     
-    {!isMobile && (
+   {/*} {!isMobile && (
       <p>La SKYE Foundation offre des ressources pour naviguer sereinement dans les défis du développement.</p>
     )}
 
-    <div className="hero-btns">
+   { <div className="hero-btns">
       <button className="btn-primary">Découvrir nos services</button>
       <button className="btn-outline">Nous contacter</button>
-    </div>
+    </div>*/}
+
+    <p>Un espace de partage, d’écoute et de solidarité pour les parents et les proches concernés par l’autisme. </p>
   </div>
 );
 

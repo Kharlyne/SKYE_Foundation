@@ -41,31 +41,11 @@
     z-index: 1; // Assure que le contenu reste au-dessus de l'overlay
   }
   
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 40px;
-    
-    .stat-item {
-      font-size: 1rem;
-      color: #888;
-      transition: transform 0.3s ease;
-      &:hover { transform: translateY(-5px); }
-      span {
-        display: block;
-        font-size: 3rem;
-        color: v.$blue-dark;
-        font-weight: 700;
-        margin-bottom: 5px;
-      }
-    }
-  }
 
   @media (max-width: 768px) {
     padding: 80px 20px 100px;
     .stats { gap: 40px; }
-    h2 { font-size: 1.8rem; }
+    h2 { font-size: 1.8rem;  color: v.$blue-accent; }
     p { font-size: 1.1rem; }
   }
 }
