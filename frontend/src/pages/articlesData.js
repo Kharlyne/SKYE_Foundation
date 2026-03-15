@@ -17,16 +17,18 @@ export const articlesData = [
     gallery: [event1, event1_detail], // Tableau d'images pour le sidebar
     category: "Événement"
   },
-  {
-    id: 2,
-    date: "15 Mars 2026",
-    title: "au service de l'éducation",
-    excerpt: "Comment nos nouvelles solutions digitales transforment l'apprentissage dans les zones rurales.",
-    fullContent: "Dans le cadre de notre programme d'inclusion numérique, nous avons déployé des outils interactifs dans plus de 50 écoles rurales. Ces solutions permettent aux élèves d'accéder à des ressources pédagogiques jusqu'alors inaccessibles, tout en offrant aux enseignants un suivi personnalisé de la progression de chaque enfant. Les premiers résultats montrent une augmentation significative de l'engagement scolaire et une meilleure compréhension des concepts fondamentaux.",
-    image: techEdu,
-    articleImage: techEdu, // Remplace par ton image HD dédiée si nécessaire
-    category: "Projet"
-  },
+ {
+  id: 2,
+  date: "15 Mars 2026",
+  title: "Les clés d'une école inclusive",
+  excerpt:
+    "Construire une école inclusive, c’est permettre à chaque enfant de trouver sa place, d’apprendre à son rythme et d’évoluer dans un environnement bienveillant, respectueux des différences.",
+  fullContent:
+    "L’école inclusive repose sur une idée essentielle : chaque enfant, quelles que soient ses particularités, doit pouvoir apprendre, participer et s’épanouir dans un cadre adapté à ses besoins. Pour les enfants autistes et plus largement les enfants en situation de handicap ou de neurodiversité, cela implique une meilleure compréhension de leurs réalités au quotidien.\n\nUne école inclusive ne signifie pas seulement accueillir la différence, mais aussi mettre en place des conditions concrètes pour favoriser la réussite de tous. Cela peut passer par des aménagements pédagogiques, un dialogue constant entre les familles et les professionnels, une sensibilisation des autres élèves, ainsi qu’une écoute attentive des besoins spécifiques de l’enfant.\n\nL’inclusion scolaire se construit aussi grâce à la coopération. Enseignants, parents, accompagnants et direction doivent pouvoir travailler ensemble afin de créer un environnement rassurant, stimulant et respectueux. Lorsqu’un enfant se sent compris, soutenu et valorisé, il peut développer sa confiance, ses compétences et son autonomie.\n\nPromouvoir l’inclusion à l’école, c’est enfin transmettre une valeur essentielle à tous les élèves : apprendre à vivre ensemble, dans le respect des différences, de la diversité et de la dignité de chacun.",
+  image: techEdu,
+  articleImage: techEdu,
+  category: "Projet"
+},
   {
     id: 3,
     date: "1 Mars 2026",
