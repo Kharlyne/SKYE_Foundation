@@ -3,7 +3,8 @@ import "./Home.scss";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Services from "../components/Services"; 
+import ArticlesSection from "../components/ArticlesSection";
+//import Services from "../components/Services"; 
 import FeedBack from "../components/Feedback";
 import Footer from "../components/Footer";
 import SideDrawer from "../components/SideDrawer/SideDrawer";
@@ -31,8 +32,9 @@ const Home = () => {
       <About />
 
       {/* 4. Services Section */}
-      <Services />
-
+      {/* <Services /> */}
+      {/* 5. NOUVEAU : Section Articles */}
+      <ArticlesSection />
       {/* 5. Feedback & Footer */}
       <FeedBack />
       <Footer />

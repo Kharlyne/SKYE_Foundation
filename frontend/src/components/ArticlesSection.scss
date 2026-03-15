@@ -1,0 +1,144 @@
+@use '../styles/vars' as v;
+@use 'sass:color';
+
+.articles-section {
+  padding: 100px 5%;
+  background: #fff;
+
+  h3 {
+    text-align: center;
+    color: v.$blue-dark;
+    margin-bottom: 50px;
+  }
+
+  // Configuration du carrousel Swiper
+  .articles-carousel {
+    padding-bottom: 60px;
+    
+    .swiper-pagination-bullet { 
+      background: #ccc; 
+      opacity: 1; 
+    }
+    
+    .swiper-pagination-bullet-active { 
+      background: v.$blue-accent; 
+    }
+  }
+
+  // Style des cartes
+  .article-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid v.$blue-accent;
+    // Effet hover uniquement sur PC (via media query)
+    @media (min-width: 1024px) {
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .img-container {
+      height: 200px;
+      position: relative;
+      img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+      }
+      .badge {
+        position: absolute; 
+        top: 15px; 
+        left: 15px;
+        background: v.$blue-accent; 
+        color: white;
+        padding: 5px 15px; 
+        border-radius: 20px; 
+        font-size: 0.7rem;
+      }
+    }
+
+    .content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      
+      h4 { margin: 10px 0; color: v.$blue-dark; }
+      small { 
+        color: v.$blue-accent; 
+        font-weight: 600; 
+        text-transform: uppercase; 
+        font-size: 0.8rem; 
+      }
+      
+      // Texte limité à 3 lignes
+      p {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
+        overflow: hidden;
+      }
+
+      // --- LOGIQUE MOBILE (ACCORDÉON) ---
+      .details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease;
+        opacity: 0;
+
+        &.show {
+          max-height: 300px;
+          opacity: 1;
+          margin-top: 15px;
+          p {
+            display: block;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+          }
+        }
+      }
+
+      // --- LOGIQUE PC (DÉSACTIVATION DE L'ACCORDÉON) ---
+      @media (min-width: 1024px) {
+        .details {
+          display: none !important; // Force la désactivation sur PC
+        }
+      }
+
+      .read-more {
+        margin-top: auto; 
+        padding-top: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: v.$blue-accent;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        z-index: 100 !important;
+        pointer-events: auto !important;
+
+        @media (min-width: 1024px) {
+          transition: color 0.3s ease;
+          &:hover { 
+            color: color.adjust(v.$blue-accent, $lightness: -10%);
+            text-decoration: underline; 
+          }
+        }
+      }
+    }
+  }
+}

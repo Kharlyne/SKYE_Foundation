@@ -1,0 +1,108 @@
+@use '../styles/vars' as v;
+@use 'sass:color';
+
+.sidebar-overlay {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); // Plus léger, plus élégant
+  backdrop-filter: blur(5px);      // Effet "Glassmorphism" moderne
+  z-index: 1000;
+}
+
+.article-sidebar {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 650px;                   // Plus large pour une présence imposante
+  height: 100%;
+  background: white;
+  z-index: 1001;
+  overflow-y: auto;
+  box-shadow: 10px 0 30px rgba(0,0,0,0.15); // Ombre plus profonde
+  animation: slideInLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1); // Animation fluide
+
+  .close-btn {
+    position: sticky;             // Reste visible en haut lors du scroll
+    top: 20px; 
+    float: right;                 // Positionne à droite élégamment
+    margin: 20px;
+    background: #f0f0f0; 
+    border: none; 
+    font-size: 1.5rem; 
+    cursor: pointer;
+    border-radius: 50%; 
+    width: 45px; 
+    height: 45px; 
+    z-index: 10;
+    transition: all 0.3s ease;
+    &:hover { 
+      background: v.$blue-dark; 
+      color: white; 
+      transform: rotate(90deg); 
+    }
+  }
+
+  .sidebar-header-grid {
+    display: flex;
+    gap: 15px;                    // Espacement plus aéré
+    padding: 0 40px 30px 40px;    // Alignement avec le contenu
+    
+    .img-wrapper {
+      flex: 1; 
+      height: 350px;              // Images plus grandes, plus d'impact
+      border-radius: 12px;        // Coins plus arrondis pour la douceur
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;        // 'cover' est plus imposant que 'contain'
+        transition: transform 0.6s ease;
+        &:hover { transform: scale(1.05); }
+      }
+    }
+  }
+
+  .sidebar-content {
+    padding: 0 60px 60px 60px;    // Marges généreuses pour le "souffle"
+    
+    .badge {
+      display: inline-block;
+      background: v.$blue-accent;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    h2 { 
+      font-size: 2.5rem; 
+      line-height: 1.1; 
+      color: v.$blue-dark; 
+      margin-bottom: 25px;
+      letter-spacing: -1px;
+    }
+
+    .text-content {
+      font-size: 1.15rem; 
+      line-height: 1.8; 
+      color: #333;
+      text-align: justify;       // Style éditorial
+      
+      p { margin-bottom: 20px; }
+    }
+  }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); } 
+  to { transform: translateX(0); }
+}
