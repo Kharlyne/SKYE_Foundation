@@ -1,0 +1,25 @@
+@use '../styles/vars' as v;
+
+.home-page {
+  overflow-x: hidden;
+  width: 100%;
+  // Si ton Header est en 'fixed' ou 'sticky', tu peux ajuster ce padding
+  padding-top: 80px;
+
+  /* Si tu avais encore des styles spécifiques à la mise en page globale
+     de la page Home, ils restent ici. 
+  */
+}
+
+/* --- Bouton Menu Mobile --- */
+.mobile-only-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 9999; 
+  display: none; 
+
+  @media (max-width: 950px) {
+    display: block; 
+  }
+}

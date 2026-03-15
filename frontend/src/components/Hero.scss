@@ -1,0 +1,61 @@
+@use 'sass:color';
+@use '../styles/vars' as v;
+
+/* --- BASE --- */
+.hero-section { width: 100%; overflow: hidden; position: relative; }
+
+/* --- STYLE COMMUN (Texte et Boutons) --- */
+.hero-content-inner {
+  .badge { 
+    display: inline-block; background: rgba(v.$blue-accent, 0.1); 
+    color: v.$blue-accent; padding: 6px 16px; border-radius: 50px; 
+    font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; span { color: v.$blue-accent; } }
+  p { font-size: 1.1rem; color: #555; margin-bottom: 30px; line-height: 1.6; }
+  
+  .hero-btns {
+    display: flex; gap: 15px;
+    button {
+      padding: 15px 30px; border-radius: 12px; font-weight: 600; cursor: pointer; border: none;
+      transition: transform 0.3s ease;
+      &:hover { transform: translateY(-3px); }
+    }
+    .btn-primary { background: v.$blue-accent; color: white; }
+    .btn-outline { background: transparent; border: 2px solid v.$blue-accent; color: v.$blue-accent; }
+  }
+}
+
+/* --- DESKTOP : GRILLE --- */
+.desktop-layout {
+  min-height: 80vh; display: flex; align-items: center; padding: 40px 5%;
+  background: linear-gradient(135deg, #ffffff 0%, #85bce9 100%);
+  position: relative;
+  // On coupe le bas du Hero pour créer une séparation dynamique
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  padding-bottom: 120px; // Espace supplémentaire dû au clip-path
+  .hero-container {
+    max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-image img { width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+  .hero-content-inner { text-align: left; }
+  .hero-btns { justify-content: flex-start; }
+}
+
+/* --- MOBILE : IMMERSIF BB --- */
+.immersive {
+  min-height: 85vh; display: flex; justify-content: center; align-items: center; text-align: center; color: white;
+
+  .bg-img {
+    position: absolute; inset: 0; z-index: 0;
+    img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+    .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); }
+  }
+
+  .hero-content-inner {
+    position: relative; z-index: 10; padding: 20px;
+    h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); color: white; }
+    .hero-btns { flex-direction: column; justify-content: center; }
+    button { width: 100%; max-width: 320px; margin: 5px auto; }
+  }
+}

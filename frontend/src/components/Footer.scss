@@ -1,0 +1,55 @@
+@use '../styles/vars' as v;
+
+.footer-container {
+  background: v.$blue-dark; // Fond charte graphique
+  color: v.$white;
+  padding: 60px 5% 20px;
+  margin-top: 50px;
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: v.$blue-accent; // Accent charte
+    text-transform: uppercase;
+  }
+
+  .sub {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(v.$white, 0.7); // Opacité pour la hiérarchie
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover { color: v.$white; }
+  }
+
+  .icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    i { 
+      font-size: 1.2rem; 
+      cursor: pointer;
+      &:hover { color: v.$blue-accent; }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(v.$white, 0.1);
+    font-size: 0.8rem;
+    color: rgba(v.$white, 0.5);
+  }
+}

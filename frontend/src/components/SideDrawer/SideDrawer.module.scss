@@ -1,56 +1,59 @@
+@use '../../styles/vars' as v;
+
 .SideDrawer {
-    position: fixed;
-    display: block;
-    width: 300px;
-    max-width: 70%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 200;
-    overflow: scroll;
-    background: #ffffff;
-    padding: 32px 16px;
-    box-sizing: border-box;
-    -webkit-transition: 0.3s ease-out;
-    transition: 0.3s ease-out;
+  position: fixed;
+  top: 0;
+  right: 0; // ON CHANGE : le menu est ancré à droite
+  width: 300px;
+  max-width: 85%;
+  height: 100vh;
+  z-index: 3000; // Augmenté pour être sûr de passer au-dessus du reste
+  background: v.$white;
+  padding: 80px 20px;
+  box-sizing: border-box;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); // Ombre à gauche du menu
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.NavItems {
-    margin: 1em 0;
-    margin-left: .5em;
-    text-transform: capitalize;
-    cursor: pointer;
-    color: #2E37A4;
-}
-
-.Nav {
-    font-size: 30px;
-    // margin-left: 5px;
-    margin-top: 10px;
-
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
-}
-
-@media (min-width: 951px) {
-    .SideDrawer {
-        display: none;
-    }
-}
-
+// États d'ouverture/fermeture inversés pour la droite
 .Open {
-    -webkit-transform: translate(0);
-    transform: translateX(0)
+  transform: translateX(0);
 }
 
 .Close {
-    -webkit-transform: translate(-100);
-    transform: translateX(-100%)
+  transform: translateX(100%); // Glisse vers la droite pour sortir
 }
 
-.Logo {
-    height: 11%;
-    margin-bottom: 32px;
+.LogoContainer {
+  margin-bottom: 40px;
+  h3 { 
+    color: v.$blue-dark; 
+    font-size: 1.5rem; 
+  }
+}
+
+.Nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.NavItems {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: v.$blue-dark;
+  padding: 15px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #f4f4f4;
+  transition: all 0.2s;
+
+  &:hover {
+    color: v.$blue-accent;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 951px) {
+  .SideDrawer {
+    display: none;
+  }
 }

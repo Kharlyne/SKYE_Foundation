@@ -1,0 +1,37 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  position:fixed;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+  .logo-container img { width: 80px; }
+
+  .desktop-nav {
+    display: flex;
+    gap: 30px;
+    font-weight: 600;
+    color: #2E37A4;
+
+    .nav-link {
+      cursor: pointer;
+      transition: color 0.3s;
+      &:hover { color: #36B4FF; }
+    }
+  }
+
+  .mobile-toggle { display: none; }
+}
+
+@media (max-width: 950px) {
+  .main-header {
+    .desktop-nav { display: none; }
+    .mobile-toggle { display: block; }
+  }
+}
