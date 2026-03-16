@@ -39,11 +39,14 @@ const About = () => {
           </motion.h2>
           
           <motion.p variants={itemVariants}>
-            Sky Foundation est une initiative née de l’expérience d’une maman d’enfant autiste. 
+            SKYE Foundation est une initiative née de l’expérience d’une maman d’enfant autiste. 
             Face aux défis du quotidien, mais aussi au sentiment d’isolement, l’idée est née 
             de créer un espace de rencontre, de partage et de solidarité.
           </motion.p>
 
+          <motion.button variants={itemVariants}>
+            lire plus
+          </motion.button>
           
         </motion.div>
       </div>
