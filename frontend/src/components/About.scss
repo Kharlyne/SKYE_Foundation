@@ -28,6 +28,28 @@ p {
   margin: 0 auto;
   text-align: center;
 }
+
+button{
+   background: white;
+  color: v.$blue-accent;
+  border: 2px solid v.$blue-accent;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 40px;
+
+  &:hover {
+    background: v.$blue-accent;
+    color: white;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
 .about-section {
   padding: 120px 5% 150px; 
   background: linear-gradient(180deg, #f9fbfd 0%, #ffffff 100%);
