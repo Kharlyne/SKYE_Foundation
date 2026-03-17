@@ -1,0 +1,169 @@
+@use '../styles/vars' as v;
+
+.contact-page {
+  padding: 120px 5%;
+  background: #fdfdfd;
+
+  // En-tête élégant
+  .contact-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 80px;
+
+    h1 { 
+      color: v.$blue-dark; 
+      font-size: 3rem; 
+      font-weight: 700;
+      margin-bottom: 25px; 
+      letter-spacing: -1px;
+    }
+    p { 
+      color: #666; 
+      font-size: 1.15rem; 
+      line-height: 1.8; 
+      font-weight: 300;
+    }
+  }
+
+  .contact-main {
+    max-width: 900px;
+    margin: 0 auto;
+
+    // Grille de services
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+
+      .contact-card {
+        padding: 40px;
+        background: white;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+        .card-icon {
+          color: v.$blue-accent;
+          margin-bottom: 20px;
+          stroke-width: 1.5;
+        }
+
+        h3 { color: v.$blue-dark; margin-bottom: 12px; font-size: 1.2rem; }
+        p { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; }
+
+        .phone-link {
+          display: block;
+          font-weight: 700;
+          color: v.$blue-accent;
+          text-decoration: none;
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          transform: translateY(-8px);
+          border-color: v.$blue-accent;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+      }
+    }
+
+    // Formulaire luxueux
+    .contact-form-wrapper {
+      padding: 60px;
+      background: white;
+      border-radius: 25px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+      h2 { text-align: center; margin-bottom: 40px; color: v.$blue-dark; font-size: 2rem; }
+
+      .minimal-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input, textarea {
+          width: 100%;
+          padding: 18px 20px;
+          border: 1px solid #e0e0e0;
+          border-radius: 12px;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          background: #fafafa;
+
+          &:focus {
+            outline: none;
+            border-color: v.$blue-accent;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(v.$blue-accent, 0.1);
+          }
+        }
+
+        .btn-submit {
+          background: v.$blue-accent;
+          color: white;
+          padding: 18px;
+          border: none;
+          border-radius: 12px;
+          font-weight: 700;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: transform 0.2s, background 0.3s;
+
+          &:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+          }
+        }
+      }
+    }
+
+    // Réseaux sociaux
+    .social-connect {
+      margin-top: 80px;
+      text-align: center;
+
+      p { 
+        font-size: 0.75rem; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        color: #999; 
+        margin-bottom: 25px; 
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+
+        a {
+          color: v.$blue-dark;
+          transition: all 0.3s ease;
+          &:hover {
+            color: v.$blue-accent;
+            transform: translateY(-4px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.map-wrapper {
+  margin: 60px 0;
+
+  h2 { margin-bottom: 20px; color: #2E37A4; }
+
+  .map-container {
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.01); // Petit effet de profondeur au survol
+    }
+  }
+}
