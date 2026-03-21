@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import ArticlesSection from "../components/ArticlesSection";
 //import Services from "../components/Services"; 
-import FeedBack from "../components/Feedback";
+
 
 import SideDrawer from "../components/SideDrawer/SideDrawer";
 import DrawerToggle from "../components/SideDrawer/DrawerToggle/DrawerToggle"; 
@@ -36,7 +36,7 @@ const Home = () => {
       {/* 5. NOUVEAU : Section Articles */}
       <ArticlesSection />
       {/* 5. Feedback & Footer */}
-      <FeedBack />
+     
       
     </div>
   );
