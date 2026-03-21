@@ -10,7 +10,7 @@ const SideDrawer = (props) => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
+    { name: "About Us", path: "/aboutus" },
     { name: "Services", path: "/services" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" }, 

@@ -5,6 +5,7 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Footer from "./components/Footer"; // 1. Import ton Footer
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import Aboutus from "./pages/Aboutus";
 import "./App.scss"; 
 
 const App = () => {
@@ -26,6 +27,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+             <Route path="/aboutus" element={<Aboutus />} />
+           
           </Routes>
         </main>
 

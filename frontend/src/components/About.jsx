@@ -1,11 +1,13 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
+import { useNavigate } from "react-router-dom";
 import "./About.scss";
 
 const About = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px 0px" });
+  const navigate = useNavigate();
 
   // Animation séquentielle
   const containerVariants = {
@@ -44,7 +46,10 @@ const About = () => {
             de créer un espace de rencontre, de partage et de solidarité.
           </motion.p>
 
-          <motion.button variants={itemVariants}>
+          <motion.button variants={itemVariants}
+          onClick={() => navigate ("/aboutus")
+          }>
+
             lire plus
           </motion.button>
           
