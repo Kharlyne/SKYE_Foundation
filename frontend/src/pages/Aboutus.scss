@@ -1,32 +1,97 @@
+@use "../styles/vars" as v;
+
 .about-us-page {
-     padding: 120px 5%;
-  background: #fdfdfd;
+ background: linear-gradient(135deg, #ffffff 0%, #85bce9 100%);
+  padding: 80px 20px 100px;
+}
 
-  .container {
+.about-us-container {
+  max-width: 950px;
+  margin: 0 auto;
+}
 
-  .about-us-header{
+.about-us-header {
+  text-align: center;
+  margin-bottom: 55px;
+  margin-top: 55px;
 
-    padding: 40px;
-    
- 
-    h1{
-        font-size: 30px;
-        text-align: center;
-    }   
-       h2{
-        font-size: 20px;
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-weight: 600;
+    color: v.$blue-accent;
+    margin: 0 auto;
+    max-width: 700px;
+    line-height: 1.5;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 75px;
+      height: 4px;
+      margin: 14px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(to right, v.$blue-accent, #8dd3ff);
     }
- 
-    
+  }
+}
+
+.about-us-content {
+  max-width: 780px;
+  margin: 0 auto;
+  background: white;
+  padding: 45px 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+  text-align: left;
+
+  p {
+    font-size: 1.08rem;
+    line-height: 1.95;
+    color: rgba(0, 0, 0, 0.78);
+    margin: 0 0 24px 0;
+    text-align: left;
+    text-indent: 1.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-page {
+    padding: 60px 16px 80px;
+  }
+
+  .about-us-header {
+    margin-bottom: 35px;
+
+    h1 {
+      font-size: 2rem;
     }
-.content {
 
-    p{text-align: justify;
-        
-    padding: 20px;
-    text-indent: 1.5rem;}
-
+    h2 {
+      font-size: 1.1rem;
     }
+  }
 
+  .about-us-content {
+    padding: 28px 22px;
+    border-radius: 18px;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      text-indent: 1rem;
+    }
   }
 }
