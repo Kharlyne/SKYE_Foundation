@@ -1,64 +1,5 @@
 @use '../styles/vars' as v;
 
-.subtitle {
-  font-weight: 700;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: v.$blue-accent;
-  margin-bottom: 1rem;
-  text-align: center;
-  position: relative;
-  padding-bottom: 0px;
-  padding-top: 30px;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 4px;
-    margin: 0.8rem auto 0;
-    border-radius: 999px;
-    background: linear-gradient(to right, v.$blue-accent, #7dc7ff);
-  }
-}
-
-p {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.8;
-  color: rgba(0, 0, 0, 0.75);
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 10px;
-}
-
-button {
-  background: white;
-  color: v.$blue-accent;
-  border: 2px solid v.$blue-accent;
-  padding: 0.9rem 1.8rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  margin-top: 40px;
-
-  &:hover {
-    background: v.$blue-accent;
-    color: white;
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
 .about-section {
   padding: 60px 5% 150px;
   background: linear-gradient(180deg, #f9fbfd 0%, #ffffff 100%);
@@ -94,10 +35,65 @@ button {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+  }
 
-    .subtitle {
-      font-weight: 700;
-      font-size: 30px;
+  .subtitle {
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: v.$blue-accent;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      margin: 0.8rem auto 0;
+      border-radius: 999px;
+      background: linear-gradient(to right, v.$blue-accent, #7dc7ff);
+    }
+  }
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.75);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  button {
+    background: white;
+    color: v.$blue-accent;
+    border: 2px solid v.$blue-accent;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 40px;
+
+    &:hover {
+      background: v.$blue-accent;
+      color: white;
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
   }
 
@@ -108,21 +104,19 @@ button {
       gap: 40px;
     }
 
+    .subtitle {
+      font-size: 25px;
+    }
+
     h2 {
       font-size: 1.8rem;
       color: v.$blue-accent;
-      padding-bottom: 20px;
       padding-top: 20px;
+      padding-bottom: 20px;
     }
 
     p {
       font-size: 1.1rem;
-    }
-
-    .container {
-      .subtitle {
-        font-size: 25px;
-      }
     }
   }
 }

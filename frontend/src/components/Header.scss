@@ -14,7 +14,7 @@
   box-sizing: border-box; //padding ne dépasse de l'écran
 
   .logo-container img { 
-    width:230px; 
+    width:260px; 
     display: block;
   }
 
@@ -46,7 +46,7 @@
 @media (max-width: 950px) {
   .main-header {
     height: 70px;
-    .logo-container img {width: 120px;}
+    .logo-container img {width: 160px;}
     .desktop-nav { display: none; }
     .mobile-toggle { display: block; }
   }

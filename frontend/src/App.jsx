@@ -6,6 +6,7 @@ import Footer from "./components/Footer"; // 1. Import ton Footer
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Aboutus from "./pages/Aboutus";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.scss"; 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <div className="App">
         {/* Composants persistants (visibles sur toutes les pages) */}
         <Header toggleDrawer={toggleDrawerHandler} drawer={drawerOpen} />
