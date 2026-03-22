@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-wrapper">
         <div className="col">
           <h4 className="title">SKYE Foundation</h4>
-          <p className="sub">Accompagner, innover, bâtir.</p>
+          <p className="sub">Sensibiliser, promouvoir l'inclusion et creer des liens autour de l'autisme</p>
         </div>
         
         <div className="col">
@@ -19,7 +19,7 @@ const Footer = () => {
 
         <div className="col">
           <h4 className="title">Contact</h4>
-          <p className="sub">Tél: (+234) 812 873 9485</p>
+          <p className="sub">Tél: (+32) 492541250</p>
           <div className="icons">
             <i className="fab fa-linkedin-in"></i>
             <i className="fab fa-twitter"></i>

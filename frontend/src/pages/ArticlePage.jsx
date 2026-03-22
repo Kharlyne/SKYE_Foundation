@@ -16,7 +16,7 @@ const ArticleCard = ({ article }) => {
         <h3>{article.title}</h3>
         <p className="article-card__excerpt">{article.excerpt}</p>
 
-        <Link to={`/articles/${article.id}`} className="article-card__link">
+        <Link to={`/article/${article.id}`} className="article-card__link">
           Lire l’article
         </Link>
       </div>
@@ -70,7 +70,7 @@ const Articles = () => {
               <p>{featuredArticle.excerpt}</p>
 
               <Link
-                to={`/articles/${featuredArticle.id}`}
+                to={`/article/${featuredArticle.id}`}
                 className="featured-article__btn"
               >
                 Lire l’article

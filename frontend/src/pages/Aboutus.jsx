@@ -12,7 +12,7 @@ const Aboutus = () => {
 
         <div className="about-us-content">
           <p>
-            Sky Foundation est une initiative née de l’expérience d’une maman
+            Skye Foundation est une initiative née de l’expérience d’une maman
             d’enfant autiste. Face aux défis du quotidien, mais aussi au
             sentiment d’isolement que peuvent vivre de nombreux parents, l’idée
             est née de créer un espace de rencontre, de partage et de

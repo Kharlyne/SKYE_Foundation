@@ -12,7 +12,7 @@ export const articlesData = [
     date: "2 Avril 2026",
     title: "Allié de l'autisme ",
     excerpt: "Rejoignez-nous ce 2 Avril pour une heure de partage dans le cadre d'une initiative locale à l'occasion de la Journée mondiale de sensibilisation à l'autisme.",
-    fullContent: "Le 2 avril est une date qui nous tient particulièrement à cœur. C'est la Journée mondiale de sensibilisation à l'autisme, et cette année, nous vous invitons à nous rejoindre pour un moment de partage et d'échange. Cette initiative locale est née de la volonté de rassembler parents, professionnels et citoyens autour d'une cause commune : favoriser l'inclusion des enfants autistes dans notre société. Au programme : témoignages de familles, interventions de spécialistes, et moments de convivialité. Venez nombreux !",
+    fullContent: "Le 2 avril est une date qui nous tient particulièrement à cœur. C'est la Journée mondiale de sensibilisation à l'autisme, et cette année, nous vous invitons à nous rejoindre pour un moment de partage et d'échange. Cette initiative locale est née de la volonté de rassembler parents, professionnels et citoyens autour d'une cause commune : Promouvoir l'inclusion des personnes atteintes du trouble du spectre de l'autisme dans le monde.Au programme courte presentation sur l'autisme ,temoignages parents et alliés de l'autisme. Venez nombreux !",
     image: event1,
     gallery: [event1, event1_detail], // Tableau d'images pour le sidebar
     category: "Événement"
@@ -32,15 +32,15 @@ export const articlesData = [
   {
     id: 3,
     date: "1 Mars 2026",
-    title: "Bilan annuel : Nos réussites",
-    excerpt: "Une rétrospective sur les actions menées l'année passée grâce à votre soutien.",
+    title: "2025 : une année fondatrice pour notre engagement",
+    excerpt: "L’année 2025 a marqué une étape décisive dans la structuration de notre fondation, à travers des actions de sensibilisation, des témoignages, un travail de terrain et la préparation de notre lancement officiel prévu le 2 avril 2026.",
     fullContent: "L'année 2025 a été une année charnière pour notre organisation. Grâce à la générosité de nos donateurs et à l'engagement infatigable de nos bénévoles, nous avons pu soutenir plus de 200 familles, lancer trois nouveaux projets d'envergure nationale et renforcer notre présence sur le terrain. Ce bilan annuel détaille chacune de nos interventions, les défis rencontrés et, surtout, les sourires que nous avons pu créer. Merci de faire partie de cette aventure humaine exceptionnelle.",
     image: bilan,
     articleImage: bilan, // Remplace par ton image HD dédiée si nécessaire
     category: "Actualité"
   },
   {
-    id: 3,
+    id: 4,
     date: "1 Mars 2026",
     title: "Bilan annuel : Nos réussites",
     excerpt: "Une rétrospective sur les actions menées l'année passée grâce à votre soutien.",

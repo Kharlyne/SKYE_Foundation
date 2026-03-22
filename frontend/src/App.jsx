@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Aboutus from "./pages/Aboutus";
 import ScrollToTop from "./components/ScrollToTop";
 import ArticlePage from "./pages/ArticlePage";
+import ArticleDetail from "./pages/ArticleDetail";
 import "./App.scss"; 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
              <Route path="/aboutus" element={<Aboutus />} />
              <Route path="/article" element={<ArticlePage/>} />
+             <Route path="/article/:id" element={<ArticleDetail />} />
             
           </Routes>
         </main>
