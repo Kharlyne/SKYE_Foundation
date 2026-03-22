@@ -38,5 +38,15 @@ export const articlesData = [
     image: bilan,
     articleImage: bilan, // Remplace par ton image HD dédiée si nécessaire
     category: "Actualité"
+  },
+  {
+    id: 3,
+    date: "1 Mars 2026",
+    title: "Bilan annuel : Nos réussites",
+    excerpt: "Une rétrospective sur les actions menées l'année passée grâce à votre soutien.",
+    fullContent: "L'année 2025 a été une année charnière pour notre organisation. Grâce à la générosité de nos donateurs et à l'engagement infatigable de nos bénévoles, nous avons pu soutenir plus de 200 familles, lancer trois nouveaux projets d'envergure nationale et renforcer notre présence sur le terrain. Ce bilan annuel détaille chacune de nos interventions, les défis rencontrés et, surtout, les sourires que nous avons pu créer. Merci de faire partie de cette aventure humaine exceptionnelle.",
+    image: bilan,
+    articleImage: bilan, // Remplace par ton image HD dédiée si nécessaire
+    category: "Actualité"
   }
 ];
