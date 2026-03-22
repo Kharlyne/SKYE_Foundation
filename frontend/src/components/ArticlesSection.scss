@@ -5,6 +5,56 @@
   padding: 100px 5%;
   background: #fff;
 
+    .see-all-btn {
+    background: white;
+    color: v.$blue-accent;
+    border: 2px solid v.$blue-accent;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 40px;
+    display: block; // Pour centrer facilement
+    margin-left: auto;
+    margin-right: auto; // Centre le bouton
+
+    &:hover {
+      background: v.$blue-accent;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+  
+   button {
+    background: white;
+    color: v.$blue-accent;
+    border: 2px solid v.$blue-accent;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 40px;
+   
+
+    &:hover {
+      background: v.$blue-accent;
+      color: white;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+
   h3 {
     text-align: center;
     color: v.$blue-dark;

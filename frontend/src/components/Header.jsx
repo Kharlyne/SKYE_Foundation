@@ -9,8 +9,7 @@ const Header = ({ toggleDrawer, drawer }) => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/aboutus" },
-    { name: "Services", path: "/services" },
-    { name: "Blog", path: "/blog" },
+    { name: "Article", path: "/article" },
     { name: "Contact Us", path: "/contact" }
   ];
 

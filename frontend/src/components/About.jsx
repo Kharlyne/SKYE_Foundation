@@ -45,7 +45,7 @@ const About = () => {
             Face aux défis du quotidien, mais aussi au sentiment d’isolement, l’idée est née 
             de créer un espace de rencontre, de partage et de solidarité.
           </motion.p>
-
+  
           <motion.button variants={itemVariants}
           onClick={() => navigate ("/aboutus")
           }>

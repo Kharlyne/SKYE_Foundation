@@ -1,36 +1,30 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { articlesData } from '../pages/articlesData';
-import ArticleSidebar from './ArticleSidebar'; 
+import ArticleDetail from '../pages/ArticleDetail';
+
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './ArticlesSection.scss';
 
 const ArticlesSection = () => {
-  const [openId, setOpenId] = useState(null);
-  const [sidebarArticle, setSidebarArticle] = useState(null); 
+  
+  const navigate = useNavigate();
   const swiperRef = useRef(null);
 
   const handleReadMore = (e, article) => {
     e.stopPropagation();
-    const isDesktop = window.innerWidth >= 1024;
 
-    if (isDesktop) {
-      // Déclenche l'ouverture du panneau latéral sur PC
-      setSidebarArticle(article);
-    } else {
-      // Gère l'accordéon sur mobile
-      if (openId === article.id) {
-        setOpenId(null);
-        if (swiperRef.current) swiperRef.current.autoplay.start();
-      } else {
-        setOpenId(article.id);
-        if (swiperRef.current) swiperRef.current.autoplay.stop();
-      }
-    }
+    //redirige vers la page de l'article
+    navigate(`/article/${article.id}`);
   };
+
+  const handleSeeAll = () => {
+    navigate ('/article');   // Redirection vers la page de tous les articles
+  }
 
   return (
     <section className="articles-section">
@@ -53,9 +47,9 @@ const ArticlesSection = () => {
           }}
           className="articles-carousel"
         >
-          {articlesData.map((article) => (
+           {articlesData.map((article) => (
             <SwiperSlide key={article.id}>
-              <article className={`article-card ${openId === article.id ? 'active' : ''}`}>
+              <article className="article-card">
                 <div className="img-container">
                   <img src={article.image} alt={article.title} />
                   <span className="badge">{article.category}</span>
@@ -64,32 +58,25 @@ const ArticlesSection = () => {
                   <small>{article.date}</small>
                   <h4>{article.title}</h4>
                   <p>{article.excerpt}</p>
-                  
-                  {/* Accordéon mobile */}
-                  <div className={`details ${openId === article.id ? 'show' : ''}`}>
-                    <p>{article.fullContent || article.excerpt}</p> 
-                  </div>
 
                   <button 
                     className="read-more" 
                     onClick={(e) => handleReadMore(e, article)}
                   >
-                    {openId === article.id ? 'Réduire' : 'Lire la suite →'}
+                    Lire la suite →
                   </button>
                 </div>
               </article>
             </SwiperSlide>
           ))}
         </Swiper>
+
+      <button className="see-all-btn" onClick={handleSeeAll}>
+          Voir tout
+        </button>
       </div>
       
-      {/* Panneau latéral (Off-canvas) pour PC */}
-      {sidebarArticle && (
-        <ArticleSidebar 
-          article={sidebarArticle} 
-          onClose={() => setSidebarArticle(null)} 
-        />
-      )}
+      
     </section>
   );
 };
