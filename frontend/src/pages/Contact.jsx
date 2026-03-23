@@ -9,9 +9,11 @@ const Contact = () => {
         <header className="contact-header">
           <h1>Parlons ensemble.</h1>
           <p>
-            Depuis notre base à Colfontaine, nous pilotons nos projets avec rigueur. 
-            Bien que nos activités se déploient sur le terrain, notre porte reste 
-            ouverte digitalement à tous nos alliés.
+           Depuis Colfontaine, nous menons nos actions avec engagement. 
+           Ancrés localement à Colfontaine et Mons, nous souhaitons élargir progressivement notre impact 
+           dans le Hainaut, en Belgique, puis à l’international.
+          Vous souhaitez vous engager, collaborer ou en savoir plus ? Notre porte
+          vous est ouverte. Ensemble, avançons vers un monde plus inclusif.
           </p>
         </header>
 
