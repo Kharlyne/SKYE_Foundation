@@ -1,24 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LuPhone, LuMail, LuGlobe, LuInstagram, LuLinkedin, LuFacebook } from 'react-icons/lu';
 import './Contact.scss';
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://skyefoundation-production.up.railway.app/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert('Message envoyé avec succès !');
+        setName(''); setPhone(''); setEmail(''); setMessage('');
+      } else {
+        alert(data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Erreur de connexion au serveur.');
+    }
+  };
+
   return (
     <div className="contact-page">
       <div className="container">
         <header className="contact-header">
           <h1>Parlons ensemble.</h1>
           <p>
-           Depuis Colfontaine, nous menons nos actions avec engagement. 
-           Ancrés localement à Colfontaine et Mons, nous souhaitons élargir progressivement notre impact 
-           dans le Hainaut, en Belgique, puis à l’international.
-          Vous souhaitez vous engager, collaborer ou en savoir plus ? Notre porte
-          vous est ouverte. Ensemble, avançons vers un monde plus inclusif.
+            Depuis Colfontaine, nous menons nos actions avec engagement. 
+            Ancrés localement à Colfontaine et Mons, nous souhaitons élargir progressivement notre impact 
+            dans le Hainaut, en Belgique, puis à l'international.
+            Vous souhaitez vous engager, collaborer ou en savoir plus ? Notre porte
+            vous est ouverte. Ensemble, avançons vers un monde plus inclusif.
           </p>
         </header>
 
         <section className="contact-main">
-          {/* Grille des contacts */}
           <div className="contact-grid">
             <div className="contact-card">
               <LuMail size={28} className="card-icon" />
@@ -38,7 +63,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Intégration Carte Google Maps */}
           <div className="map-wrapper">
             <h2>Retrouvez-nous à Colfontaine</h2>
             <div className="map-container">
@@ -57,11 +81,33 @@ const Contact = () => {
 
           <div className="contact-form-wrapper">
             <h2>Envoyez-nous un message</h2>
-            <form className="minimal-form">
-              <input type="text" placeholder="Votre nom" required />
-              <input type="tel" placeholder="Votre numéro de téléphone" required />
-              <input type="email" placeholder="Votre adresse email" required />
-              <textarea placeholder="Votre message" rows="4"></textarea>
+            <form className="minimal-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Votre nom"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Votre numéro de téléphone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Votre adresse email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <textarea
+                placeholder="Votre message"
+                rows="4"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
               <button type="submit" className="btn-submit">Envoyer le message</button>
             </form>
           </div>
