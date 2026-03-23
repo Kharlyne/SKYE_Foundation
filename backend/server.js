@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:5173' })); // ton front Vite
+app.use(cors({ origin: 'http://localhost:5173', 'https://skye-foundation.com' })); // ton front Vite
 app.use(express.json());
 
 app.use('/api/contact', contactRoute);
