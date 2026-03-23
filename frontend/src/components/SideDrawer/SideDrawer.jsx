@@ -1,31 +1,48 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { LuX, LuChevronRight } from "react-icons/lu";
 import classes from "./SideDrawer.module.scss";
 import Backdrop from "../UI/Backdrop/Backdrop";
 
 const SideDrawer = (props) => {
-  // Gestion propre des classes avec un tableau dynamique
-  const attachedClasses = [
-    classes.SideDrawer, 
-    props.show ? classes.Open : classes.Close
+  // Utilisation des classes CSS Modules
+  const attachedClasses = [classes.SideDrawer, props.show ? classes.Open : classes.Close];
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/aboutus" },
+    { name: "Article", path: "/article" },
+    { name: "Contact", path: "/contact" }, 
   ];
 
   return (
     <React.Fragment>
-      {/* Le Backdrop permet de fermer le menu en cliquant à côté */}
       <Backdrop show={props.show} clicked={props.clicked} />
       
-      <div className={attachedClasses.join(" ")} onClick={props.clicked}>
+      <div className={attachedClasses.join(" ")}>
+        <button className={classes.CloseBtn} onClick={props.clicked}>
+          <LuX size={24} />
+        </button>
+
         <div className={classes.LogoContainer}>
-           {/* Optionnel : ajoute ton logo ici pour le branding */}
-           <h3>SKYE Foundation</h3>
+          <h3>SKYE Foundation</h3>
         </div>
         
         <nav className={classes.Nav}>
-          <div className={classes.NavItems}>Home</div>
-          <div className={classes.NavItems}>About Us</div>
-          <div className={classes.NavItems}>Services</div>
-          <div className={classes.NavItems}>Contact Us</div>
-          <div className={classes.NavItems}>Blog</div>
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              to={link.path} 
+              className={classes.NavItem} 
+              onClick={(e) => {
+                e.stopPropagation(); 
+                props.clicked();
+              }}
+            >
+              <span>{link.name}</span>
+              <LuChevronRight size={18} className={classes.Arrow} />
+            </Link>
+          ))}
         </nav>
       </div>
     </React.Fragment>

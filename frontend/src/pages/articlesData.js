@@ -3,8 +3,8 @@
 // Importation des images pour permettre à Vite de les inclure dans le bundle
 import event1 from "../assets/images/frenchhandicap.png";
 import event1_detail from "../assets/images/englishhandicap.png";
-import techEdu from "../assets/images/image4.jpg";
-import bilan from "../assets/images/image3.jpg";
+import techEdu from "../assets/images/ecole.jpg";
+import bilan from "../assets/images/avril.png";
 
 export const articlesData = [
   {
@@ -12,7 +12,7 @@ export const articlesData = [
     date: "2 Avril 2026",
     title: "Allié de l'autisme ",
     excerpt: "Rejoignez-nous ce 2 Avril pour une heure de partage dans le cadre d'une initiative locale à l'occasion de la Journée mondiale de sensibilisation à l'autisme.",
-    fullContent: "Le 2 avril est une date qui nous tient particulièrement à cœur. C'est la Journée mondiale de sensibilisation à l'autisme, et cette année, nous vous invitons à nous rejoindre pour un moment de partage et d'échange. Cette initiative locale est née de la volonté de rassembler parents, professionnels et citoyens autour d'une cause commune : favoriser l'inclusion des enfants autistes dans notre société. Au programme : témoignages de familles, interventions de spécialistes, et moments de convivialité. Venez nombreux !",
+    fullContent: "Le 2 avril est une date qui nous tient particulièrement à cœur. C'est la Journée mondiale de sensibilisation à l'autisme, et cette année, nous vous invitons à nous rejoindre pour un moment de partage et d'échange. Cette initiative locale est née de la volonté de rassembler parents, professionnels et citoyens autour d'une cause commune : Promouvoir l'inclusion des personnes atteintes du trouble du spectre de l'autisme dans le monde.Au programme courte presentation sur l'autisme ,temoignages parents et alliés de l'autisme. Venez nombreux !",
     image: event1,
     gallery: [event1, event1_detail], // Tableau d'images pour le sidebar
     category: "Événement"
@@ -31,12 +31,67 @@ export const articlesData = [
 },
   {
     id: 3,
-    date: "1 Mars 2026",
-    title: "Bilan annuel : Nos réussites",
-    excerpt: "Une rétrospective sur les actions menées l'année passée grâce à votre soutien.",
-    fullContent: "L'année 2025 a été une année charnière pour notre organisation. Grâce à la générosité de nos donateurs et à l'engagement infatigable de nos bénévoles, nous avons pu soutenir plus de 200 familles, lancer trois nouveaux projets d'envergure nationale et renforcer notre présence sur le terrain. Ce bilan annuel détaille chacune de nos interventions, les défis rencontrés et, surtout, les sourires que nous avons pu créer. Merci de faire partie de cette aventure humaine exceptionnelle.",
-    image: bilan,
+    date: "15 Mars 2026",
+    title: "2025 : une année fondatrice pour notre engagement",
+    excerpt: "L’année 2025 a marqué une étape décisive dans la structuration de notre fondation, à travers des actions de sensibilisation, des témoignages, un travail de terrain et la préparation de notre lancement officiel prévu le 2 avril 2026.",
+     fullContent: [
+    {
+      type: "paragraph",
+      text: "L’année 2025 a été une étape essentielle dans la construction de notre fondation."
+    },
+    {
+      type: "paragraph",
+      text: "En tant que collectif de parents, nous avons mené un travail de fond, à la fois humain et de terrain, afin de mieux comprendre les réalités vécues et d’orienter nos actions de manière concrète et pertinente."
+    },
+    {
+      type: "paragraph",
+      text: "Plusieurs initiatives ont vu le jour :"
+    },
+    {
+      type: "list",
+      items: [
+        "Des actions de sensibilisation à travers des vidéos et témoignages diffusés sur nos réseaux",
+        "Une interview marquante retraçant le parcours d’une maman, du diagnostic à l’acceptation",
+        "La mobilisation de personnes alliées à notre cause, qui ont contribué à relayer et amplifier notre message",
+        "La création de contenus par des groupes d’enfants, donnant une parole authentique et précieuse"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Dans cette dynamique, une bande dessinée a été réalisée à partir des mots et ressentis des enfants, afin de proposer un outil de sensibilisation accessible à tous. Celle-ci sera mise à disposition sur notre site pour une utilisation libre dans un objectif de sensibilisation."
+    },
+        {
+      type: "paragraph",
+      text: "En parallèle, nous avons apporté un soutien, de manière officieuse, à une initiative au Cameroun. Cette expérience nous a permis d’observer, d’apprendre et d’approfondir notre compréhension du terrain, tant au niveau local qu’international."
+    },
+       {
+      type: "paragraph",
+      text: "Ce travail d’investigation, mené depuis plusieurs années en tant que parents engagés, nous a permis de poser des bases solides, d’identifier les besoins réels et de définir des actions que nous pouvons concrètement mettre en place."
+    },
+    {
+      type: "paragraph",
+      text: "Aujourd’hui, forts de ce parcours, nous sommes prêts à franchir une nouvelle étape."
+    },
+    {
+      type: "paragraph",
+      text: "Le lancement officiel de la fondation est prévu le 2 avril 2026."
+    },
+    {
+      type: "paragraph",
+      text: "Nous remercions chaleureusement toutes les personnes qui nous ont déjà soutenus et accompagnés dans cette aventure."
+    },
+    {
+      type: "paragraph",
+      text: "Et pour celles et ceux qui souhaitent s’engager à nos côtés, soutenir nos actions ou simplement en savoir plus : vous êtes les bienvenus."
+    },
+    {
+      type: "paragraph",
+      text: "Ce travail d’investigation, mené depuis plusieurs années en tant que parents engagés, nous a permis de poser des bases solides, d’identifier les besoins réels et de définir des actions que nous pouvons concrètement mettre en place."
+    }
+    
+  ],
     articleImage: bilan, // Remplace par ton image HD dédiée si nécessaire
+    image:bilan,
     category: "Actualité"
   }
 ];

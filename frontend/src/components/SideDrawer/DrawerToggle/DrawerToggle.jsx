@@ -1,5 +1,5 @@
 import React from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi"; // Icônes pro
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 import classes from "./DrawerToggle.module.scss";
 
 const DrawerToggle = (props) => {

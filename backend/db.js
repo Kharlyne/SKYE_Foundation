@@ -1,5 +1,9 @@
-const { Pool } = require('pg');
-require('dotenv').config();
+import pg from 'pg';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const { Pool } = pg;
 
 const pool = new Pool({
   host: process.env.DB_HOST,
@@ -9,8 +13,4 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
 });
 
-pool.connect()
-  .then(() => console.log('Datenbankverbindung erfolgreich!'))
-  .catch((err) => console.error('Datenbankfehler:', err));
-
-module.exports = pool;
+export default pool;

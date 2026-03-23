@@ -1,11 +1,13 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
+import { useNavigate } from "react-router-dom";
 import "./About.scss";
 
 const About = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px 0px" });
+  const navigate = useNavigate();
 
   // Animation séquentielle
   const containerVariants = {
@@ -39,11 +41,17 @@ const About = () => {
           </motion.h2>
           
           <motion.p variants={itemVariants}>
-            Sky Foundation est une initiative née de l’expérience d’une maman d’enfant autiste. 
+            SKYE Foundation est une initiative née de l’expérience d’une maman d’enfant autiste. 
             Face aux défis du quotidien, mais aussi au sentiment d’isolement, l’idée est née 
             de créer un espace de rencontre, de partage et de solidarité.
           </motion.p>
+  
+          <motion.button variants={itemVariants}
+          onClick={() => navigate ("/aboutus")
+          }>
 
+            lire plus
+          </motion.button>
           
         </motion.div>
       </div>
