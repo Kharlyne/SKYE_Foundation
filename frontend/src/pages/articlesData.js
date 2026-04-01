@@ -10,7 +10,7 @@ export const articlesData = [
   {
     id: 1,
     date: "2 Avril 2026",
-    title: "Allié de l'autisme ",
+    title: "Alliés de l'autisme ",
     excerpt: "Rejoignez-nous ce 2 Avril pour une heure de partage dans le cadre d'une initiative locale à l'occasion de la Journée mondiale de sensibilisation à l'autisme.",
     fullContent: "Le 2 avril est une date qui nous tient particulièrement à cœur. C'est la Journée mondiale de sensibilisation à l'autisme, et cette année, nous vous invitons à nous rejoindre pour un moment de partage et d'échange. Cette initiative locale est née de la volonté de rassembler parents, professionnels et citoyens autour d'une cause commune : Promouvoir l'inclusion des personnes atteintes du trouble du spectre de l'autisme dans le monde.Au programme courte presentation sur l'autisme ,temoignages parents et alliés de l'autisme. Venez nombreux !",
     image: event1,
@@ -20,7 +20,7 @@ export const articlesData = [
  {
   id: 2,
   date: "15 Mars 2026",
-  title: "Les clés d'une école inclusive",
+  title: "Promouvoir l'inclusion",
   excerpt:
     "Construire une école inclusive, c’est permettre à chaque enfant de trouver sa place, d’apprendre à son rythme et d’évoluer dans un environnement bienveillant, respectueux des différences.",
   fullContent:

@@ -27,7 +27,7 @@ const Aboutus = () => {
           </p>
 
           <p>
-            Sky Foundation souhaite donc créer des liens entre parents,
+            Skye Foundation souhaite donc créer des liens entre parents,
             favoriser les échanges et relayer les ressources existantes afin que
             chacun puisse se sentir moins seul face aux défis liés à l’autisme,
             à la neurodiversité et au handicap.
