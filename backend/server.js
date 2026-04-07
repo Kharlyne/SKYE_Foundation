@@ -7,6 +7,9 @@ dotenv.config();
 
 const app = express();
 
+const articlesRouter = require('./routes/articles');
+app.use('/api/articles', articlesRouter);
+
 
 app.use(cors({ 
   origin: ['http://localhost:5173', 'https://skye-foundation.com'] 
