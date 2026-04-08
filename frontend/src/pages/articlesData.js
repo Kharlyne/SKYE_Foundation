@@ -26,7 +26,7 @@ export const articlesData = [
   fullContent: [
     {
       type: "paragraph",
-      text:"Promouvoir l’inclusion, c’est permettre à chaque enfant de se sentir accepté, d’échanger et de partager des moments avec d’autres, quels que soient leurs besoins ou particularités. Notre objectif n’est pas de créer des classes inclusives à l’école, mais de favoriser des espaces et des activités où tous les enfants et leurs familles peuvent se rencontrer et partager des expériences enrichissantes. "
+      text:"Promouvoir l’inclusion, c’est permettre à chaque enfant de se sentir accepté, d’échanger et de partager des moments avec d’autres, quels que soient leurs besoins ou particularités. Notre objectif est de favoriser des espaces et des activités où tous les enfants et leurs familles peuvent se rencontrer et partager des expériences enrichissantes. "
     },
      {
       type: "paragraph",
