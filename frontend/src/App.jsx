@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Footer from "./components/Footer"; // 1. Import ton Footer
@@ -41,6 +42,7 @@ const App = () => {
 
         {/* Le Footer est placé ici pour rester en bas, peu importe la route */}
         <Footer />
+        <Analytics />
       </div>
     </BrowserRouter>
   );
