@@ -29,6 +29,8 @@ const AdminPage = () => {
     published: true,
   });
 
+  const [editingId, setEditingId] = useState(null);
+
   const openCloudinaryWidget = () => {
     const widget = window.cloudinary.createUploadWidget(
       {
@@ -105,20 +107,48 @@ const AdminPage = () => {
     setErrorMsg('');
     setSuccessMsg('');
     try {
-      const res = await fetch(`${API_URL}/api/articles`, {
-        method: 'POST',
+      const url = editingId
+        ? `${API_URL}/api/articles/${editingId}`
+        : `${API_URL}/api/articles`;
+      const method = editingId ? 'PUT' : 'POST';
+      const res = await fetch(url, {
+        method,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error();
-      setSuccessMsg('Article publié avec succès !');
-      setForm({ title: '', excerpt: '', content: '', category: 'Événement', date: '', image_url: '', language: 'fr' });
+      setSuccessMsg(editingId ? 'Article modifié avec succès !' : 'Article publié avec succès !');
+      setForm({ title: '', excerpt: '', content: '', category: 'Événement', date: '', image_url: '', language: 'fr', gallery: [], published: true });
+      setEditingId(null);
       fetchArticles();
     } catch {
       setErrorMsg('Erreur lors de la publication.');
     } finally {
       setSubmitLoading(false);
     }
+  };
+
+  const handleEdit = (article) => {
+    setEditingId(article.id);
+    setForm({
+      title: article.title || '',
+      excerpt: article.excerpt || '',
+      content: article.content || '',
+      category: article.category || 'Événement',
+      date: article.date || '',
+      image_url: article.image_url || '',
+      language: article.language || 'fr',
+      gallery: article.gallery || [],
+      published: article.published ?? true,
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCancelEdit = () => {
+    setEditingId(null);
+    setForm({ title: '', excerpt: '', content: '', category: 'Événement', date: '', image_url: '', language: 'fr', gallery: [], published: true });
+    setErrorMsg('');
+    setSuccessMsg('');
   };
 
   const handleDelete = async (id) => {
@@ -201,7 +231,7 @@ const AdminPage = () => {
         <div style={styles.contentGrid}>
           {/* Form */}
           <div style={styles.panel}>
-            <div style={styles.panelTitle}>Ajouter un article</div>
+            <div style={styles.panelTitle}>{editingId ? 'Modifier l\'article' : 'Ajouter un article'}</div>
 
             {successMsg && <div style={styles.successBanner}>{successMsg}</div>}
             {errorMsg && <div style={styles.errorBanner}>{errorMsg}</div>}
@@ -265,9 +295,14 @@ const AdminPage = () => {
                 ))}
               </div>
             </FormGroup>
-            <button style={styles.submitBtn} onClick={handleSubmit} disabled={submitLoading}>
-              {submitLoading ? 'Publication...' : 'Publier l\'article'}
-            </button>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button style={styles.submitBtn} onClick={handleSubmit} disabled={submitLoading}>
+                {submitLoading ? 'Enregistrement...' : editingId ? 'Enregistrer les modifications' : 'Publier l\'article'}
+              </button>
+              {editingId && (
+                <button style={styles.cancelBtn} onClick={handleCancelEdit}>Annuler</button>
+              )}
+            </div>
           </div>
 
           {/* Article list */}
@@ -287,6 +322,12 @@ const AdminPage = () => {
                   <div style={styles.articleMeta}>{article.date || '—'}</div>
                   <span style={{ ...styles.catBadge, ...categoryClass(article.category) }}>{article.category}</span>
                 </div>
+                <button style={styles.editBtn} onClick={() => handleEdit(article)} title="Modifier">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                </button>
                 <button style={styles.delBtn} onClick={() => handleDelete(article.id)} title="Supprimer">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
@@ -377,7 +418,8 @@ const styles = {
   lockSub: { fontSize: '12px', color: '#aaa', marginBottom: '1.2rem' },
   lockInput: { width: '100%', background: '#f8f8f8', border: '0.5px solid #ddd', borderRadius: '6px', padding: '0.55rem 0.8rem', fontSize: '13px', marginBottom: '0.75rem', textAlign: 'center', letterSpacing: '0.15em', outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit' },
   lockBtn: { width: '100%', background: '#0f2744', color: '#fff', border: 'none', borderRadius: '6px', padding: '0.6rem', fontSize: '13px', cursor: 'pointer' },
-  uploadBtn: { background: '#f0f4ff', color: '#0f2744', border: '0.5px solid #c0ccee', borderRadius: '6px', padding: '0.5rem 0.9rem', fontSize: '13px', cursor: 'pointer' },
+  editBtn: { width: '26px', height: '26px', borderRadius: '5px', border: '0.5px solid #c0ccee', background: '#f0f4ff', color: '#185fa5', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+  cancelBtn: { flex: 1, background: '#f4f4f4', color: '#666', border: '0.5px solid #ddd', borderRadius: '6px', padding: '0.65rem', fontSize: '13px', cursor: 'pointer' },
 };
 
 export default AdminPage;

@@ -57,4 +57,26 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+
+//modifier un article
+router.put('/:id', async (req, res) => {
+  try {
+    const { title, excerpt, content, category, image_url, date, language, gallery, published } = req.body;
+
+    const result = await pool.query(
+      `UPDATE articles 
+       SET title=$1, excerpt=$2, content=$3, category=$4, image_url=$5, date=$6, language=$7, gallery=$8, published=$9
+       WHERE id=$10
+       RETURNING *`,
+      [title, excerpt, content, category, image_url, date, language || 'fr', gallery || [], published ?? true, req.params.id]
+    );
+
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Article introuvable' });
+    res.json({ message: 'Article modifié', article: result.rows[0] });
+  } catch (error) {
+    console.error("Erreur modification article :", error);
+    res.status(500).json({ message: "Erreur serveur" });
+  }
+});
+
 export default router;
