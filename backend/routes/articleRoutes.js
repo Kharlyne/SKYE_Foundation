@@ -28,15 +28,13 @@ router.get('/:id', async (req, res) => {
 // POST créer un article
 router.post("/", async (req, res) => {
   try {
-    const { title, excerpt, content, category, image_url, status } = req.body;
+    const { title, excerpt, content, category, image_url, date, language, gallery, published } = req.body;
 
     const result = await pool.query(
-      `
-      INSERT INTO articles (title, excerpt, content, category, image_url, status)
-      VALUES ($1, $2, $3, $4, $5, $6)
-      RETURNING *
-      `,
-      [title, excerpt, content, category, image_url, status || "draft"]
+      `INSERT INTO articles (title, excerpt, content, category, image_url, date, language, gallery, published)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+       RETURNING *`,
+      [title, excerpt, content, category, image_url, date, language || 'fr', gallery || [], published ?? true]
     );
 
     res.status(201).json({

@@ -25,7 +25,8 @@ const AdminPage = () => {
     date: '',
     image_url: '',
     language: 'fr',
-    status: 'published',
+    gallery: [],
+    published: true,
   });
 
   const openCloudinaryWidget = () => {
@@ -40,6 +41,24 @@ const AdminPage = () => {
       (error, result) => {
         if (!error && result.event === 'success') {
           setForm(f => ({ ...f, image_url: result.info.secure_url }));
+        }
+      }
+    );
+    widget.open();
+  };
+
+  const openGalleryWidget = () => {
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: CLOUDINARY_CLOUD_NAME,
+        uploadPreset: CLOUDINARY_UPLOAD_PRESET,
+        multiple: true,
+        sources: ['local', 'url'],
+        language: 'fr',
+      },
+      (error, result) => {
+        if (!error && result.event === 'success') {
+          setForm(f => ({ ...f, gallery: [...f.gallery, result.info.secure_url] }));
         }
       }
     );
@@ -208,13 +227,21 @@ const AdminPage = () => {
                 <input name="date" value={form.date} onChange={handleChange} placeholder="ex: 2 Avril 2026" style={styles.input} />
               </FormGroup>
             </div>
-            <FormGroup label="Statut">
-              <select name="status" value={form.status} onChange={handleChange} style={styles.input}>
-                <option value="published">Publié</option>
-                <option value="draft">Brouillon</option>
-              </select>
-            </FormGroup>
-            <FormGroup label="Image">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+              <FormGroup label="Langue">
+                <select name="language" value={form.language} onChange={handleChange} style={styles.input}>
+                  <option value="fr">Français</option>
+                  <option value="en">Anglais</option>
+                </select>
+              </FormGroup>
+              <FormGroup label="Statut">
+                <select name="published" value={form.published} onChange={e => setForm(f => ({ ...f, published: e.target.value === 'true' }))} style={styles.input}>
+                  <option value="true">Publié</option>
+                  <option value="false">Brouillon</option>
+                </select>
+              </FormGroup>
+            </div>
+            <FormGroup label="Image principale">
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <button type="button" onClick={openCloudinaryWidget} style={styles.uploadBtn}>
                   Choisir une image
@@ -222,6 +249,20 @@ const AdminPage = () => {
                 {form.image_url && (
                   <img src={form.image_url} alt="preview" style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '6px', border: '0.5px solid #ddd' }} />
                 )}
+              </div>
+            </FormGroup>
+            <FormGroup label="Galerie (images supplémentaires)">
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
+                <button type="button" onClick={openGalleryWidget} style={styles.uploadBtn}>
+                  Ajouter des images
+                </button>
+                {form.gallery.map((url, i) => (
+                  <div key={i} style={{ position: 'relative' }}>
+                    <img src={url} alt="" style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '6px', border: '0.5px solid #ddd' }} />
+                    <button onClick={() => setForm(f => ({ ...f, gallery: f.gallery.filter((_, j) => j !== i) }))}
+                      style={{ position: 'absolute', top: '-6px', right: '-6px', width: '16px', height: '16px', borderRadius: '50%', background: '#e24b4a', color: '#fff', border: 'none', cursor: 'pointer', fontSize: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
+                  </div>
+                ))}
               </div>
             </FormGroup>
             <button style={styles.submitBtn} onClick={handleSubmit} disabled={submitLoading}>
