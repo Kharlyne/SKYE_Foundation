@@ -25,6 +25,7 @@ const AdminPage = () => {
     date: '',
     image_url: '',
     language: 'fr',
+    status: 'published',
   });
 
   const openCloudinaryWidget = () => {
@@ -207,6 +208,12 @@ const AdminPage = () => {
                 <input name="date" value={form.date} onChange={handleChange} placeholder="ex: 2 Avril 2026" style={styles.input} />
               </FormGroup>
             </div>
+            <FormGroup label="Statut">
+              <select name="status" value={form.status} onChange={handleChange} style={styles.input}>
+                <option value="published">Publié</option>
+                <option value="draft">Brouillon</option>
+              </select>
+            </FormGroup>
             <FormGroup label="Image">
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <button type="button" onClick={openCloudinaryWidget} style={styles.uploadBtn}>
