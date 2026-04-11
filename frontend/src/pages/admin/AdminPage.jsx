@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 const API_URL = import.meta.env.VITE_API_URL;
 const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'skye2026';
 
+const CLOUDINARY_CLOUD_NAME = 'dxypxvdsz';
+const CLOUDINARY_UPLOAD_PRESET = 'skyefoundation';
+
 const AdminPage = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
@@ -23,6 +26,24 @@ const AdminPage = () => {
     image_url: '',
     language: 'fr',
   });
+
+  const openCloudinaryWidget = () => {
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: CLOUDINARY_CLOUD_NAME,
+        uploadPreset: CLOUDINARY_UPLOAD_PRESET,
+        multiple: false,
+        sources: ['local', 'url'],
+        language: 'fr',
+      },
+      (error, result) => {
+        if (!error && result.event === 'success') {
+          setForm(f => ({ ...f, image_url: result.info.secure_url }));
+        }
+      }
+    );
+    widget.open();
+  };
 
   const handleLogin = () => {
     if (passwordInput === ADMIN_PASSWORD) {
@@ -186,8 +207,15 @@ const AdminPage = () => {
                 <input name="date" value={form.date} onChange={handleChange} placeholder="ex: 2 Avril 2026" style={styles.input} />
               </FormGroup>
             </div>
-            <FormGroup label="URL de l'image">
-              <input name="image_url" value={form.image_url} onChange={handleChange} placeholder="https://..." style={styles.input} />
+            <FormGroup label="Image">
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <button type="button" onClick={openCloudinaryWidget} style={styles.uploadBtn}>
+                  Choisir une image
+                </button>
+                {form.image_url && (
+                  <img src={form.image_url} alt="preview" style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '6px', border: '0.5px solid #ddd' }} />
+                )}
+              </div>
             </FormGroup>
             <button style={styles.submitBtn} onClick={handleSubmit} disabled={submitLoading}>
               {submitLoading ? 'Publication...' : 'Publier l\'article'}
@@ -301,7 +329,7 @@ const styles = {
   lockSub: { fontSize: '12px', color: '#aaa', marginBottom: '1.2rem' },
   lockInput: { width: '100%', background: '#f8f8f8', border: '0.5px solid #ddd', borderRadius: '6px', padding: '0.55rem 0.8rem', fontSize: '13px', marginBottom: '0.75rem', textAlign: 'center', letterSpacing: '0.15em', outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit' },
   lockBtn: { width: '100%', background: '#0f2744', color: '#fff', border: 'none', borderRadius: '6px', padding: '0.6rem', fontSize: '13px', cursor: 'pointer' },
-  errorText: { color: '#e24b4a', fontSize: '11px', marginBottom: '0.5rem' },
+  uploadBtn: { background: '#f0f4ff', color: '#0f2744', border: '0.5px solid #c0ccee', borderRadius: '6px', padding: '0.5rem 0.9rem', fontSize: '13px', cursor: 'pointer' },
 };
 
 export default AdminPage;
