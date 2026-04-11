@@ -9,6 +9,7 @@ import Aboutus from "./pages/Aboutus";
 import ScrollToTop from "./components/ScrollToTop";
 import ArticlePage from "./pages/ArticlePage";
 import ArticleDetail from "./pages/ArticleDetail";
+import AdminPage from "./pages/admin/AdminPage";
 import "./App.scss"; 
 
 const App = () => {
@@ -34,7 +35,7 @@ const App = () => {
              <Route path="/aboutus" element={<Aboutus />} />
              <Route path="/article" element={<ArticlePage/>} />
              <Route path="/article/:id" element={<ArticleDetail />} />
-            
+             <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </main>
 

@@ -1,36 +1,23 @@
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { articlesData } from '../pages/articlesData';
-import ArticleDetail from '../pages/ArticleDetail';
-
-
+import { useArticles } from '../hooks/useArticles';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './ArticlesSection.scss';
 
 const ArticlesSection = () => {
-  
   const navigate = useNavigate();
   const swiperRef = useRef(null);
+  const { articles, loading } = useArticles();
 
-  const handleReadMore = (e, article) => {
-    e.stopPropagation();
-
-    //redirige vers la page de l'article
-    navigate(`/article/${article.id}`);
-  };
-
-  const handleSeeAll = () => {
-    navigate ('/article');   // Redirection vers la page de tous les articles
-  }
+  if (loading) return null;
 
   return (
     <section className="articles-section">
       <div className="container">
         <h3>Nos dernières publications</h3>
-        
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           modules={[Autoplay, Pagination]}
@@ -41,28 +28,21 @@ const ArticlesSection = () => {
           touchStartPreventDefault={false}
           preventClicks={false}
           preventClicksPropagation={false}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
-          }}
+          breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
           className="articles-carousel"
         >
-           {articlesData.map((article) => (
+          {articles.map((article) => (
             <SwiperSlide key={article.id}>
               <article className="article-card">
                 <div className="img-container">
-                  <img src={article.image} alt={article.title} />
+                  <img src={article.image_url} alt={article.title} />
                   <span className="badge">{article.category}</span>
                 </div>
                 <div className="content">
                   <small>{article.date}</small>
                   <h4>{article.title}</h4>
                   <p>{article.excerpt}</p>
-
-                  <button 
-                    className="read-more" 
-                    onClick={(e) => handleReadMore(e, article)}
-                  >
+                  <button className="read-more" onClick={(e) => { e.stopPropagation(); navigate(`/article/${article.id}`); }}>
                     Lire la suite →
                   </button>
                 </div>
@@ -70,13 +50,8 @@ const ArticlesSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-      <button className="see-all-btn" onClick={handleSeeAll}>
-          Voir tout
-        </button>
+        <button className="see-all-btn" onClick={() => navigate('/article')}>Voir tout</button>
       </div>
-      
-      
     </section>
   );
 };
