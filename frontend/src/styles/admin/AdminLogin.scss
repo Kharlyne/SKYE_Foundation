@@ -1,0 +1,71 @@
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f5f7;
+
+  &__box {
+    text-align: center;
+    width: 280px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    border: 0.5px solid #e5e5e5;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    background: #0f2744;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a2e;
+    margin-bottom: 0.3rem;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 1.2rem;
+  }
+
+  &__input {
+    width: 100%;
+    background: #f8f8f8;
+    border: 0.5px solid #ddd;
+    border-radius: 6px;
+    padding: 0.55rem 0.8rem;
+    font-size: 13px;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  &__error {
+    color: #a32d2d;
+    font-size: 12px;
+    margin-bottom: 0.75rem;
+  }
+
+  &__button {
+    width: 100%;
+    background: #0f2744;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem;
+    font-size: 13px;
+    cursor: pointer;
+  }
+}

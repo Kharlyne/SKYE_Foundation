@@ -16,7 +16,7 @@ const app = express();
 
 
 app.use(cors({ 
-  origin: ['http://localhost:5173', 'https://skye-foundation.com'] 
+  origin: ['http://localhost:5173', 'https://skye-foundation.com', 'http://localhost:5174'] 
 }));
 
 app.use(express.json());

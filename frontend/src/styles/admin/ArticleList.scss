@@ -1,0 +1,170 @@
+.article-list {
+  background: #fff;
+  border: 0.5px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1.2rem;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid #e5e5e5;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid #f0f0f0;
+  }
+
+  &__thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background: #f4f4f4;
+    flex-shrink: 0;
+    border: 0.5px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a2e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__meta {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 2px;
+  }
+
+  &__badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-top: 3px;
+
+    &.event {
+      background: #e6f1fb;
+      color: #185fa5;
+    }
+
+    &.project {
+      background: #e1f5ee;
+      color: #0f6e56;
+    }
+
+    &.news {
+      background: #faeeda;
+      color: #854f0b;
+    }
+  }
+
+  &__edit,
+  &__delete {
+    height: 26px;
+    padding: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  &__edit {
+    border: 0.5px solid #c0ccee;
+    background: #f0f4ff;
+    color: #185fa5;
+  }
+
+  &__delete {
+    border: 0.5px solid #e5e5e5;
+    background: transparent;
+    color: #aaa;
+  }
+
+  &__empty {
+    font-size: 13px;
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .article-list {
+    padding: 1rem;
+
+    &__item {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    &__info {
+      min-width: calc(100% - 54px);
+    }
+
+    &__edit,
+    &__delete {
+      height: 32px;
+      padding: 0 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .article-list {
+    padding: 0.9rem;
+
+    &__item {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__thumb {
+      width: 100%;
+      height: 160px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__info {
+      min-width: 100%;
+    }
+
+    &__name {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
+
+    &__edit,
+    &__delete {
+      width: 100%;
+    }
+  }
+}
