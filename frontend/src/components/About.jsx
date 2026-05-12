@@ -37,11 +37,11 @@ const About = () => {
           </motion.span>
           
           <motion.h2 variants={itemVariants}>
-            SKYE Foundation, une présence dédiée aux familles.
+            SKYE TOGETHER, une présence dédiée aux familles.
           </motion.h2>
           
           <motion.p variants={itemVariants}>
-            SKYE Foundation est une initiative née de l’expérience d’une maman d’enfant autiste. 
+            SKYE TOGETHER est une initiative née de l’expérience d’une maman d’enfant autiste. 
             Face aux défis du quotidien, mais aussi au sentiment d’isolement, l’idée est née 
             de créer un espace de rencontre, de partage et de solidarité.
           </motion.p>

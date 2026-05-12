@@ -22,11 +22,11 @@ const Hero = () => {
 // Contenu avec logique de rendu conditionnel pour le paragraphe
 const Content = ({ isMobile }) => (
   <div className="hero-content-inner">
-    <span className="badge">SKYE FOUNDATION</span>
+    <span className="badge">SKYE TOGETHER</span>
     <h1>Créer du lien  <br /><span>autour de l'autisme.</span></h1>
     
    {/*} {!isMobile && (
-      <p>La SKYE Foundation offre des ressources pour naviguer sereinement dans les défis du développement.</p>
+      <p>La SKYE TOGETHER offre des ressources pour naviguer sereinement dans les défis du développement.</p>
     )}
 
    { <div className="hero-btns">

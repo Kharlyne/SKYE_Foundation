@@ -27,7 +27,7 @@ const AdminLogin = ({
         </div>
 
         <div className="admin-login__title">Espace admin</div>
-        <div className="admin-login__subtitle">SKYE Foundation</div>
+        <div className="admin-login__subtitle">SKYE TOGETHER</div>
 
         <input
           type="password"

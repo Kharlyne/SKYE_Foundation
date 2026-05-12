@@ -74,7 +74,7 @@ const Contact = () => {
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Adresse SKYE Foundation Colfontaine"
+                title="Adresse SKYE TOGETHER Colfontaine"
               ></iframe>
             </div>
           </div>

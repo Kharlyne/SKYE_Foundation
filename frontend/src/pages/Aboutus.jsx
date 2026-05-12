@@ -7,12 +7,12 @@ const Aboutus = () => {
       <div className="about-us-container">
         <header className="about-us-header">
           <h1>Qui sommes-nous ?</h1>
-          <h2>SKYE Foundation, une présence dédiée aux familles.</h2>
+          <h2>SKYE TOGETHER, une présence dédiée aux familles.</h2>
         </header>
 
         <div className="about-us-content">
           <p>
-            Skye Foundation est une initiative née de l’expérience d’une maman
+            Skye TOGETHER est une initiative née de l’expérience d’une maman
             d’enfant autiste. Face aux défis du quotidien, mais aussi au
             sentiment d’isolement que peuvent vivre de nombreux parents, l’idée
             est née de créer un espace de rencontre, de partage et de
@@ -27,7 +27,7 @@ const Aboutus = () => {
           </p>
 
           <p>
-            Skye Foundation souhaite donc créer des liens entre parents,
+            Skye TOGETHER souhaite donc créer des liens entre parents,
             favoriser les échanges et relayer les ressources existantes afin que
             chacun puisse se sentir moins seul face aux défis liés à l’autisme,
             à la neurodiversité et au handicap.

@@ -10,11 +10,12 @@
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   height: 100px;
-  .logo-container img { width: 230px; }
+  .logo-container img { width: 500px; }
   box-sizing: border-box; //padding ne dépasse de l'écran
 
   .logo-container img { 
-    width:260px; 
+    padding-top: 20px;
+    width:140px; 
     display: block;
   }
 
@@ -46,7 +47,7 @@
 @media (max-width: 950px) {
   .main-header {
     height: 70px;
-    .logo-container img {width: 160px;}
+    .logo-container img {width: 100px;}
     .desktop-nav { display: none; }
     .mobile-toggle { display: block; }
   }

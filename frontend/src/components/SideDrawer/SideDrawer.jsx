@@ -25,7 +25,7 @@ const SideDrawer = (props) => {
         </button>
 
         <div className={classes.LogoContainer}>
-          <h3>SKYE Foundation</h3>
+          <h3>SKYE TOGETHER</h3>
         </div>
         
         <nav className={classes.Nav}>

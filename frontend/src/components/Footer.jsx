@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-wrapper">
         <div className="col">
-          <h4 className="title">SKYE Foundation</h4>
+          <h4 className="title">SKYE TOGETHER</h4>
           <p className="sub">Sensibiliser, promouvoir l'inclusion et creer des liens autour de l'autisme</p>
         </div>
         
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        © 2026 SKYE Foundation - Tous droits réservés.
+        © 2026 SKYE TOGETHER - Tous droits réservés.
       </div>
     </footer>
   );
